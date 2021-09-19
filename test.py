@@ -95,8 +95,7 @@ y1 = x**2
 y2 = 2*x+1
 
 plt.figure(num=3,figsize=(8,5))
-plt.plot(x,y2)
-plt.plot(x,y1,color='red',linewidth=1.0,linestyle='--')
+
 plt.xlim((-1,2))
 plt.ylim((-2,3))
 plt.xlabel('x x')
@@ -114,6 +113,18 @@ ax.spines['right'].set_color('none')
 ax.spines['top'].set_color('none')
 ax.xaxis.set_ticks_position('bottom')
 ax.yaxis.set_ticks_position('left')
+#设置x轴 与y轴的位置
 ax.spines['bottom'].set_position(('data',-1)) 
 ax.spines['left'].set_position(('data',2))
+
+#制作图例
+# plt.plot(x,y2,label='test1')
+# plt.plot(x,y1,color='red',linewidth=1.0,linestyle='--',label='test2')
+# plt.legend()
+l1, = plt.plot(x,y2)
+l2, = plt.plot(x,y1,color='red',linewidth=1.0,linestyle='--')
+plt.legend(handles=[l1,l2,],labels=['asdas','sadas'],loc='best')
 plt.show()
+
+
+
